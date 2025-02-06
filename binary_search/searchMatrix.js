@@ -7,7 +7,7 @@
 // todo T(n) : O(log(m)+log(n))
 
 var searchMatrix = function (matrix, target) {
-  //todo Traversing throuhg rows to find the row in which element exists
+  //todo Traversing through rows to find the row in which element exists
   let ROWS = matrix.length,
     COLS = matrix[0].length;
   let top = 0,
@@ -16,8 +16,10 @@ var searchMatrix = function (matrix, target) {
   while (top <= bottom) {
     let row = Math.floor((top + bottom) / 2);
     if (target < matrix[row][0]) {
+      //todo checking for elemenent 1st position in a row
       bottom = row - 1;
     } else if (target > matrix[row][COLS - 1]) {
+      // //todo checking for elemenent last position in a row
       top = row + 1;
     }
     // todo to fix the top and bottom values or to track these values(to find target in those)
